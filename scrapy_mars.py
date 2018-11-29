@@ -1,16 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[189]:
-
-
-# from flask import Flask
-# app = Flask(__name__)
-
-
-# In[190]:
-
-
 # Dependencies
 from bs4 import BeautifulSoup
 import requests
