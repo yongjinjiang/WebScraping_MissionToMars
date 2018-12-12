@@ -126,16 +126,21 @@ def scrape():
             str0=os.environ.get("MONGODB_URI")
             # str0="mongodb://heroku_dxww20g1:2m85ei2jvb8o3u8j6r994d8rqh@ds263791.mlab.com:63791/heroku_dxww20g1"
             print("str0=",str0)
-            str1=str0.split('/');str1.pop;
+            str1=str0.split('/');str1.pop;Mars_db=str1[-1];
             print("str1=",str1)
             str0='/'.join(str1)
            
+
             conn=str0
             client = pymongo.MongoClient(conn)
-            # Define database and collection
-            client.drop_database('Mars_db')
+
             
-            db = client.Mars_db
+            # Define database and collection
+            # client.drop_database('Mars_db')
+            # db = client.Mars_db
+
+            client.drop_database(Mars_db)
+            db = client[Mars_db]
 
 
             collection = db.Mars_hemisphere_image_urls
