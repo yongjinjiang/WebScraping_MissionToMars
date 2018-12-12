@@ -125,7 +125,7 @@ def scrape():
 
             str0=os.environ.get("MONGOLAB_URI")
             print("str0=",str0)
-            str1=str0.split('/');str1[-1]='Mars_db'
+            str1=str0.split('/');str1.pop;
             print("str1=",str1)
             str0='/'.join(str1)
            
