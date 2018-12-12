@@ -123,7 +123,8 @@ def scrape():
             
 
 
-            str0=os.environ.get("MONGOLAB_URI")
+            str0=os.environ.get("MONGODB_URI")
+            # str0="mongodb://heroku_dxww20g1:2m85ei2jvb8o3u8j6r994d8rqh@ds263791.mlab.com:63791/heroku_dxww20g1"
             print("str0=",str0)
             str1=str0.split('/');str1.pop;
             print("str1=",str1)
