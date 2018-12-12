@@ -121,7 +121,13 @@ def scrape():
             # conn = 'mongodb://localhost:27017'
             # conn="mongodb://heroku_dxww20g1:2m85ei2jvb8o3u8j6r994d8rqh@ds263791.mlab.com:63791/heroku_dxww20g1"
             
-            conn=os.environ.get("MONGODB_URI")
+
+
+            str0=os.environ.get("MONGOLAB_URI")
+            str1=str0.split('/');str1[-1]='Mars_db'
+            str0='/'.join(str1)
+           
+            conn=str0
             client = pymongo.MongoClient(conn)
             # Define database and collection
             client.drop_database('Mars_db')

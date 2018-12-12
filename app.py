@@ -7,7 +7,12 @@ app = Flask(__name__)
 
 # Use flask_pymongo to set up mongo connection
 # app.config["MONGO_URI"] = "mongodb://localhost:27017/Mars_db"
-app.config["MONGO_URI"]=os.environ.get("MONGODB_URI")
+
+
+str0=os.environ.get("MONGOLAB_URI")
+str1=str0.split('/');str1[-1]='Mars_db'
+str0='/'.join(str1)
+app.config["MONGO_URI"]=str0
 
 mongo = PyMongo(app)
 
