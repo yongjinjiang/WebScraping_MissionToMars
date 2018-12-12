@@ -118,7 +118,10 @@ def scrape():
             #Now we put all the data into Mongo:
 
             # Initialize PyMongo to work with MongoDBs
-            conn = 'mongodb://localhost:27017'
+            # conn = 'mongodb://localhost:27017'
+            # conn="mongodb://heroku_dxww20g1:2m85ei2jvb8o3u8j6r994d8rqh@ds263791.mlab.com:63791/heroku_dxww20g1"
+            
+            conn=os.environ.get("MONGODB_URI")
             client = pymongo.MongoClient(conn)
             # Define database and collection
             client.drop_database('Mars_db')
