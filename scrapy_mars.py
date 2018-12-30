@@ -6,7 +6,7 @@ from splinter import Browser
 import pandas as pd
 import numpy as np
 import re
-import os
+
 ###twitter
 import json
 import tweepy 
@@ -14,6 +14,16 @@ import sys
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+import os
+GOOGLE_CHROME_BIN=os.environ.get("GOOGLE_CHROME_BIN")
+CHROMEDRIVER_PATH=os.environ.get("CHROMEDRIVER_PATH")
+
+# chrome_options = Options()
+# chrome_options.binary_location = GOOGLE_CHROME_BIN
+# chrome_options.add_argument('--headless')
+# chrome_options.add_argument('--disable-gpu')
+# chrome_options.add_argument('--no-sandbox')
+# chrome_options.add_argument('--disable-dev-shm-usage')
 
 # chrome_options = Options()
 # chrome_options.add_argument("--disable-extensions")
@@ -32,13 +42,12 @@ from selenium.webdriver.chrome.options import Options
 
 def scrape():
             
-            GOOGLE_CHROME_BIN=os.environ.get("GOOGLE_CHROME_BIN")
-            CHROMEDRIVER_PATH=os.environ.get("CHROMEDRIVER_PATH")
-
             chrome_options = Options()
             chrome_options.binary_location = GOOGLE_CHROME_BIN
+            chrome_options.add_argument('--headless')
             chrome_options.add_argument('--disable-gpu')
             chrome_options.add_argument('--no-sandbox')
+            chrome_options.add_argument('--disable-dev-shm-usage')
             driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=chrome_options)
             #driver = webdriver.Chrome()
 
