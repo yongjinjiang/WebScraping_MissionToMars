@@ -11,6 +11,15 @@ import os
 import json
 import tweepy 
 import sys
+
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+
+# chrome_options = Options()
+# chrome_options.add_argument("--disable-extensions")
+# driver = webdriver.Chrome(chrome_options=chrome_options)
+
+
 #sys.path.append('/Users/jyj/Dropbox/A_A_Data_Analysis/Group_Projects')
 # Import Twitter API Keys
 # from config import consumer_key, consumer_secret, access_token, access_token_secret
@@ -22,22 +31,28 @@ import sys
 
 
 def scrape():
+            
+            GOOGLE_CHROME_BIN=os.environ.get("GOOGLE_CHROME_BIN")
+            CHROMEDRIVER_PATH=os.environ.get("CHROMEDRIVER_PATH")
 
-            # chrome_options = Options()
-            # chrome_options.binary_location = GOOGLE_CHROME_BIN
-            # chrome_options.add_argument('--disable-gpu')
-            # chrome_options.add_argument('--no-sandbox')
-            # driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=chrome_options)
+            chrome_options = Options()
+            chrome_options.binary_location = GOOGLE_CHROME_BIN
+            chrome_options.add_argument('--disable-gpu')
+            chrome_options.add_argument('--no-sandbox')
+            driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=chrome_options)
+            #driver = webdriver.Chrome()
 
-
-            #NASA Mars latest News: this code block will generate latest_news
-            executable_path = {'executable_path': '/usr/local/bin/chromedriver'}
-            browser = Browser('chrome', **executable_path, headless=False)
+            # #NASA Mars latest News: this code block will generate latest_news
+            # executable_path = {'executable_path': '/usr/local/bin/chromedriver'}
+            # browser = Browser('chrome', **executable_path, headless=False)
 
             url0="https://mars.nasa.gov/news/"
             url="https://mars.nasa.gov/news/?page=0&per_page=40&order=publish_date+desc%2Ccreated_at+desc&search=&category=19%2C165%2C184%2C204&blank_scope=Latest"
-            browser.visit(url)
-            html = browser.html
+            # browser.visit(url)
+            # html = browser.html
+            driver.get(url)
+            html = driver.page_source
+
             soup = BeautifulSoup(html, 'html.parser')
             results = soup.select('.list_text')
             latest_title=results[0].select('.content_title a')[0].get_text()
@@ -50,15 +65,18 @@ def scrape():
 
             #JPL Mars Space Images - Featured Image: this code block will generate featured_image_url
             Mars_Space_Images="https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars";
-            browser.visit(Mars_Space_Images)
-            html = browser.html
+            # browser.visit(Mars_Space_Images)
+            # html = browser.html
+            driver.get(Mars_Space_Images)
+            html = driver.page_source
+
             soup = BeautifulSoup(html, 'html.parser')
             results = soup.select('div.carousel_items')
             # results[0].select('article')[0]["style"]
             RE=re.compile(r"'/.*.jpg'")
             featured_image_url='https://www.jpl.nasa.gov'+RE.findall(results[0].select('article')[0]["style"])[0].strip("'")
-            featured_image_url
-            browser.visit(featured_image_url)
+            # featured_image_url
+            # browser.visit(featured_image_url)
 
 
 
