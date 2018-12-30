@@ -35,18 +35,18 @@ def index():
    # listings = mongo.db.Mars.find_one()
    
 
-    hemisphere_image_urls=mongo.db.Mars_hemisphere_image_urls.find()
-    hemisphere_image_urls=[result for result in hemisphere_image_urls]
+    # hemisphere_image_urls=mongo.db.Mars_hemisphere_image_urls.find()
+    # hemisphere_image_urls=[result for result in hemisphere_image_urls]
 
-    try:
-        hemisphere_image_urls12=hemisphere_image_urls[:2]
-    except:
-        hemisphere_image_urls12=[]
+    # try:
+    #     hemisphere_image_urls12=hemisphere_image_urls[:2]
+    # except:
+    #     hemisphere_image_urls12=[]
 
-    try:
-        hemisphere_image_urls34=hemisphere_image_urls[-2:]
-    except:
-        hemisphere_image_urls34=[]
+    # try:
+    #     hemisphere_image_urls34=hemisphere_image_urls[-2:]
+    # except:
+    #     hemisphere_image_urls34=[]
 
     facts_dict=mongo.db.Mars_facts_dict.find()
     try: 
@@ -84,10 +84,12 @@ def index():
 
 
     x=list(zip(list(facts_dict.keys())[1:],list(facts_dict.values())[1:]))
-    return render_template("index.html", hemisphere_image_urls34=hemisphere_image_urls34,\
+    return render_template("index.html",\
+    #hemisphere_image_urls34=hemisphere_image_urls34,\
         facts_dict=facts_dict,weather=weather,\
         x=x, latest_news=latest_news,featured_image_url=featured_image_url,\
-        hemisphere_image_urls12=hemisphere_image_urls12)
+        #hemisphere_image_urls12=hemisphere_image_urls12
+        )
 
 
 

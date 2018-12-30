@@ -23,11 +23,11 @@ import sys
 
 def scrape():
 
-            chrome_options = Options()
-            chrome_options.binary_location = GOOGLE_CHROME_BIN
-            chrome_options.add_argument('--disable-gpu')
-            chrome_options.add_argument('--no-sandbox')
-            driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=chrome_options)
+            # chrome_options = Options()
+            # chrome_options.binary_location = GOOGLE_CHROME_BIN
+            # chrome_options.add_argument('--disable-gpu')
+            # chrome_options.add_argument('--no-sandbox')
+            # driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=chrome_options)
 
 
             #NASA Mars latest News: this code block will generate latest_news
@@ -151,12 +151,12 @@ def scrape():
             db = client[Mars_db]
 
 
-            collection = db.Mars_hemisphere_image_urls
-            collection.drop()
-            collection.insert_many(hemisphere_image_urls)
-            results=collection.find()
-            results=[result for result in results]
-            results
+            # collection = db.Mars_hemisphere_image_urls
+            # collection.drop()
+            # collection.insert_many(hemisphere_image_urls)
+            # results=collection.find()
+            # results=[result for result in results]
+            # results
 
             collection = db.Mars_facts_dict
             collection.drop()
