@@ -1,3 +1,14 @@
+## This is the homework project for unit 13(Web-Scraping-and-Document-Databases) of [Data Visualization and Analytics](https://bootcamp.umn.edu/data/landing%20full/)
+   - Scrapes various websites for data related to the Mission to Mars and displays the information in a single HTML page. Details about the project can be found [here](#mission-to-mars). 
+   - The app website for this project: https://mars--scraping.herokuapp.com/
+   - A snapshot of the app: 
+   <img src="./Images/app.png " width="600" height="400">
+   
+   - The tools used in this project: [Requests](http://docs.python-requests.org/en/master/), [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/), [Selenium](https://www.seleniumhq.org/), [PyMongo](https://api.mongodb.com/python/current/), [flask](http://flask.pocoo.org/) are used. This project is deployed on [Heroku](https://www.heroku.com/).
+
+
+
+## **_The original text of the homework assignment:_** 
 #   Mission to Mars
 
 ![mission_to_mars](Images/mission_to_mars.jpg)
