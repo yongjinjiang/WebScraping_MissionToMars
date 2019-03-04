@@ -1,4 +1,5 @@
-## This is the homework project for unit 13(Web-Scraping-and-Document-Databases) of [Data Visualization and Analytics](https://bootcamp.umn.edu/data/landing%20full/)
+## About
+   - This is the homework project for unit 13(Web-Scraping-and-Document-Databases) of [Data Visualization and Analytics](https://bootcamp.umn.edu/data/landing%20full/)
    - Scrapes various websites for data related to the Mission to Mars and displays the information in a single HTML page. Details about the project can be found [here](#the-original-text-of-the-homework-assignment). 
    - The app website for this project: [https://mars--scraping.herokuapp.com/](https://mars--scraping.herokuapp.com/).
    - A snapshot of the app: 
