@@ -17,7 +17,7 @@ hyperlink==18.0.0
 idna==2.7
 incremental==17.5.0
 itsdangerous==1.1.0
-Jinja2==2.10
+Jinja2>=2.10.1
 lxml==4.2.5
 MarkupSafe==1.1.0
 numpy==1.15.4
@@ -44,7 +44,7 @@ six==1.11.0
 splinter==0.10.0
 tweepy==3.7.0
 Twisted==18.9.0
-urllib3==1.24.1
+urllib3>=1.24.2
 w3lib==1.19.0
 Werkzeug==0.14.1
 zope.interface==4.6.0
