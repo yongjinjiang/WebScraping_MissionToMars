@@ -46,5 +46,5 @@ tweepy==3.7.0
 Twisted==19.7.0
 urllib3>=1.24.2
 w3lib==1.19.0
-Werkzeug==0.14.1
+Werkzeug==0.15.3
 zope.interface==4.6.0
